@@ -1,4 +1,3 @@
-# Use container-based infrastructure for quicker build start-up
 sudo: false
 language: minimal
 env:

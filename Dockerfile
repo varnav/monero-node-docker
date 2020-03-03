@@ -2,7 +2,7 @@
 FROM ubuntu:20.04 AS build
 
 LABEL Maintainer = "Evgeny Varnavskiy <varnavruz@gmail.com>"
-LABEL Description="Docker image for TON (Telegram open network) node"
+LABEL Description="Docker image for Monero (XRM) node"
 LABEL License="MIT License"
 
 ENV DEBIAN_FRONTEND=noninteractive
@@ -17,7 +17,9 @@ RUN curl --retry 5 --retry-delay 2 -Lo monero.tar.bz2 https://downloads.getmoner
   
 FROM ubuntu:20.04
 
-RUN useradd -ms /bin/bash monero && mkdir -p /home/monero/.bitmonero && chown -R monero:monero /home/monero/.bitmonero
+RUN useradd --shell /bin/bash monero && \
+  mkdir -p /home/monero/.bitmonero && \
+  chown -R monero:monero /home/monero/.bitmonero
 USER monero
 WORKDIR /home/monero
 

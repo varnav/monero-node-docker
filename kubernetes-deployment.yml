@@ -17,18 +17,11 @@ spec:
       containers:
       - name: monero-node
         image: varnav/monero-node
-        env:
-        - name: CONSOLE_PORT
-          value: "43678"
-        - name: LITESERVER
-          value: "true"
-        - name: LITE_PORT
-          value: "43679"
         ports:
-        - name: monero-console
-          containerPort: 43678
-        - name: monero-lite
-          containerPort: 43679
+        - name: node
+          containerPort: 18080
+        - name: rpc
+          containerPort: 18081
         resources:
           limits:
             memory: "4Gi"
