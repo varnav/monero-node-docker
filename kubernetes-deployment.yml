@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: monero-node
+  labels:
+    app: monero-node
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: monero-node
+  template:
+    metadata:
+      labels:
+        app: monero-node
+    spec:
+      containers:
+      - name: monero-node
+        image: varnav/monero-node
+        env:
+        - name: CONSOLE_PORT
+          value: "43678"
+        - name: LITESERVER
+          value: "true"
+        - name: LITE_PORT
+          value: "43679"
+        ports:
+        - name: monero-console
+          containerPort: 43678
+        - name: monero-lite
+          containerPort: 43679
+        resources:
+          limits:
+            memory: "4Gi"
+            cpu: "200m"
+        volumeMounts:
+          - name: monero-data
+            mountPath: /home/monero/
+      # initContainers:
+      # - name: init-ulimitn
+      #   image: busybox
+      #   command: ["sh", "-c", "ulimit -n 16000"]
+      #   securityContext:
+      #     privileged: true
+      volumes:
+      - name: monero-data
