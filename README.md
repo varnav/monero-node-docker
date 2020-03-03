@@ -19,7 +19,7 @@ docker build -t varnav/monero-node .
 #### Run interactively
 
 ```bash
-docker run --rm -it -v monero-data:/home/monero/ -p 18080:18080 -p 18081:18081 --name=monero varnav/monero-node
+docker run --rm -it -v monero-data:/home/monero/ -p 18080:18080 -p 18081:18081 varnav/monero-node
 ```
 
 #### Run as daemon
