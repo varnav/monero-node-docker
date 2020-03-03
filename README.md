@@ -1,6 +1,6 @@
 # Monero (XRM) Docker Node
 
-[![Test status](https://travis-ci.com/varnav/monero-node-docker.svg?branch=master)](https://travis-ci.com/varnav/monero-node-docker) [![Docker Pulls](https://img.shields.io/docker/pulls/varnav/monero-node.svg)](https://hub.docker.com/r/varnav/monero-node)
+![Validate code](https://github.com/varnav/monero-node-docker/workflows/Validate%20code/badge.svg)![Docker Image Build](https://github.com/varnav/monero-node-docker/workflows/Docker%20Image%20Build/badge.svg)[![Docker Pulls](https://img.shields.io/docker/pulls/varnav/monero-node.svg)](https://hub.docker.com/r/varnav/monero-node)
 
 #### Open firewall
 
