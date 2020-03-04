@@ -23,10 +23,10 @@ chown -R monero:monero /home/monero/.bitmonero
 USER monero
 WORKDIR /home/monero
 
-COPY --chown=monero:monero --from=build /root/monerod /home/monero/monerod
+COPY --chown=monero:monero --from=build /root/monerod /home/monero/
 COPY entrypoint.sh /entrypoint.sh
 
-VOLUME /home/monero/
+VOLUME /home/monero/.bitmonero
 
 EXPOSE 18080 18081
 
