@@ -1,5 +1,5 @@
 # docker run -d --restart=unless-stopped -v monero-data:/home/monero/ -p 18080:18080 -p 18081:18081 --name=monero varnav/monero-node
-FROM alpine AS build
+FROM alpine:3 AS build
 
 LABEL Maintainer = "Evgeny Varnavskiy <varnavruz@gmail.com>"
 LABEL Description="Docker image for Monero (XRM) node"
