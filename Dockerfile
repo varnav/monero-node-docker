@@ -28,6 +28,7 @@ WORKDIR /home/monero
 
 COPY --chown=monero:monero --from=build /root/* /home/monero/
 COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
 
 VOLUME /home/monero/.bitmonero
 
