@@ -23,15 +23,16 @@ FROM ubuntu:20.04
 RUN useradd --shell /bin/bash monero && \
 mkdir -p /home/monero/.bitmonero && \
 chown -R monero:monero /home/monero/.bitmonero
-USER monero
 WORKDIR /home/monero
 
 COPY --chown=monero:monero --from=build /root/* /home/monero/
-COPY entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
+COPY entrypoint.sh ./entrypoint.sh
+RUN chmod +x ./entrypoint.sh
 
 VOLUME /home/monero/.bitmonero
 
 EXPOSE 18080 18081
 
-ENTRYPOINT ["/entrypoint.sh"]
+USER monero
+
+ENTRYPOINT ["./entrypoint.sh"]
